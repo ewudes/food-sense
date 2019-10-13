@@ -14,3 +14,5 @@
 * Использовать методологию или комбинацию из нескольких
 * Position, display, float - использовать только так, где по другому решить не получается
 
+[ДЕМО](https://alksghn.github.io/digitalDesign-foodSense/)
+
