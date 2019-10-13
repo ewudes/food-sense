@@ -1,0 +1,6 @@
+.header{
+  &__logo{
+    display: block;
+    @include sprite($food-sense-m);
+  }
+}

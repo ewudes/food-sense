@@ -1,2 +1,8 @@
+.header__logo {
+  display: block;
+  background-image: url("./img/sprites/sprite.png");
+  background-position: -238px 0px;
+  width: 120px;
+  height: 120px; }
 
 /*# sourceMappingURL=style.css.map */

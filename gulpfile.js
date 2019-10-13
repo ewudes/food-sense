@@ -3,7 +3,8 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
     sourcemaps = require('gulp-sourcemaps'),
-    browserSync = require('browser-sync').create();
+    browserSync = require('browser-sync').create(),
+    spritesmith = require('gulp.spritesmith');
 
 function style(done){
   gulp.src('scss/style.scss')
@@ -39,5 +40,13 @@ function watch(){
   gulp.watch('./scss/**/*', style)
   gulp.watch('./*.html', browserReload)
 }
+
+gulp.task('sprite', function(){
+  var spriteData = gulp.src('img/icon/*.png').pipe(spritesmith({
+    imgName: 'sprite.png',
+    cssName: 'sprite.scss'
+  }));
+  return spriteData.pipe(gulp.dest('img/sprites/'))
+})
 
 gulp.task('default', gulp.parallel(watch, sync))
