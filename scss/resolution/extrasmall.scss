@@ -1,6 +1,199 @@
+body{
+  font-size: 14px;
+  color: $color-base;
+}
+.container,
+.footer{
+  max-width: 480px;
+  margin: 0 50px;
+}
+
 .header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   &__logo{
     display: block;
+    order: 2;
     @include sprite($food-sense-m);
+    margin: 20px 0;
+  }
+  &__nav-list{
+    display: flex;
+    border-bottom: 1px solid $color-border;
+  }
+  &__nav-link{
+    display: inline-block;
+    color: $color-link;
+    text-decoration: none;
+    margin: 20px 8px;
+    &:hover{
+      color: $color-link-active;
+    }
+  }
+  &__social{
+    display: none;
+  }
+}
+
+.maincontent{
+  display: flex;
+  flex-direction: column;
+}
+
+.hero{
+  &__nav{
+    display: none;
+  }
+}
+
+.banner{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 280px;
+  background-image: url('img/pic/0232_foodsense.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 30px;
+  &__title,
+  &__description{
+    padding: 0 10px;
+    height: 35px;
+    line-height: 35px;
+  }
+  &__title{
+    margin-top: auto;
+    background-color: #f0e8df;
+    opacity: .8;
+  }
+  &__description{
+    background-color: #3d3d3d;
+    color: #fff;
+    font-size: 12px;
+  }
+}
+
+.mailing-list{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px dashed $color-border;
+  border-top: 1px dashed $color-border;
+  padding: 20px 0;
+  &__description{
+    display: flex; 
+    &:before{
+      content: '';
+      display: inline-block;
+      @include sprite($icon-mailinglist-32);
+      padding-right: 20px;
+      margin: 0 15px;
+    }
+  }
+  &__form{
+    margin-top: 15px;
+  }
+  &__btn{
+    border-radius: 3px;
+  }
+}
+
+.publications-list{
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid $color-border;
+  &__item-image{
+    border: 1px solid $color-border;
+    padding: 10px;
+  }
+  &__item-pic{
+    width: 100%;
+  }
+  &__item-title{
+    margin-top: 15px;
+    font-size: 18px;
+  }
+  &__item-link{
+    text-decoration: none;
+    color: $color-link;
+    &:hover{
+      color: $color-link-active;
+    }
+  }
+  &__item-text{
+    margin: 20px 0;
+  }
+  &__item-description{
+    display: flex;
+    margin-bottom: 30px;
+  }
+  &__item-description-date{
+    opacity: .6;
+  }
+  &__item-description-more{
+    margin-left: 5px;
+  }
+  &__item-description-link{
+    color: $color-link;
+    text-decoration: none;
+    border-bottom: 1px dashed $color-border;
+    &:hover{
+      color: $color-link-active;
+    }
+  }
+}
+
+.footer{
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 0;
+  font-size: 12px;
+  &__corporate-list{
+    display: flex;
+  }
+  &__corporate-item{
+    border-left: 1px solid $color-border;
+    &:first-child{
+      border: none;
+    }
+  }
+  &__corporate-link{
+    color: $color-link;
+    text-decoration: none;
+    margin: 0 2px;
+    padding: 0 2px;
+    &:hover{
+      color: $color-link-active;
+    }
+  }
+  &__corporate-copyright{
+    margin-top: 5px;
+    text-align: center;
+    opacity: .7;
+  }
+  &__social{
+    display: flex;
+  }
+  &__social-item{
+    margin: 0 5px;
+  }
+  &__social-link{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    opacity: .4;
+    &--twitter{   
+      @include sprite($icon-twitter-m);
+    }
+    &--facebook{
+      @include sprite($icon-facebook-m);
+    }
+    &--rss{
+      @include sprite($icon-rss-m);
+    }
   }
 }

@@ -1,4 +1,5 @@
-@import './img/sprites/sprite';
+@import 'mixins/sprite';
+@import 'mixins/variables';
 @import 'resolution/extrasmall';
 @import 'resolution/small';
 @import 'resolution/medium';
