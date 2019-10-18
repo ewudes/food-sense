@@ -1,0 +1,36 @@
+@media screen and (min-width: 481px){
+  .container,
+  .footer{
+    max-width: 768px;
+    margin: 0 0;
+  }
+  .header{
+    flex-direction: row;
+    justify-content: center;
+    &__logo{
+      order: 1;
+      margin-right: 10px;
+    }
+    &__nav{
+      order: 2;
+    }
+    &__nav-list{
+      border: none;
+    }
+  }
+  .mailing-list{
+    &__form{
+      width: 100%;
+    }
+    &__email{
+      width: 100%;
+    }
+  }
+  .publications-list{
+    flex-direction: row;
+    flex-wrap: wrap;
+    &__item{
+      width: 50%;
+    }
+  }
+}

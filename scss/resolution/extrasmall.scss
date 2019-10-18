@@ -84,15 +84,18 @@ body{
   padding: 20px 0;
   &__description{
     display: flex; 
+    position: relative;
+    margin-left: 70px;
     &:before{
+      position: absolute;
+      left: -55px;
       content: '';
       display: inline-block;
       @include sprite($icon-mailinglist-32);
-      padding-right: 20px;
-      margin: 0 15px;
     }
   }
   &__form{
+    display: flex;
     margin-top: 15px;
   }
   &__btn{

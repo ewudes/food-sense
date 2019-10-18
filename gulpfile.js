@@ -44,7 +44,8 @@ function watch(){
 gulp.task('sprite', function(){
   var spriteData = gulp.src('img/icon/*.png').pipe(spritesmith({
     imgName: 'sprite.png',
-    cssName: 'sprite.scss'
+    cssName: 'sprite.scss',
+    padding: 40
   }));
   return spriteData.pipe(gulp.dest('img/sprites/'))
 })
