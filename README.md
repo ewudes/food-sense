@@ -1,18 +1,4 @@
-### Задача: 
-Создать макет сайта
-### Условия выполнения работы:
-Выполнить адаптивную верстку страницы. При этом необходимо применять Mobile First подход с использованием технологии Flexbox. 
-### Предусмотреть следующие варианты экранов:
-* До 480px
-* От 481px до 768px
-* От 769px до 992px
-* От 993px до 1176px
-* От 1177px 
-### Примечание:
-* Не использовать JavaScript
-* Использовать SCSS(SASS)
-* Использовать методологию или комбинацию из нескольких
-* Position, display, float - использовать только так, где по другому решить не получается
+# Flophouse [![image](https://img.shields.io/badge/click_to_demo-blue)](https://google.com/)
+<!-- [![Netlify Status](https://api.netlify.com/api/v1/badges/1c2bfc8f-b78b-4b37-8cfd-5807c1eaeadc/deploy-status)](https://app.netlify.com/sites/dorobinski/deploys) -->
 
-[ДЕМО](https://alksghn.github.io/digitalDesign-foodSense/)
-
+Description coming soon
