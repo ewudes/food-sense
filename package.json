@@ -1,9 +1,10 @@
 {
-  "name": "digitaldesign-foodsense",
+  "name": "foods-sense",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "npx gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -13,9 +14,10 @@
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-rename": "^1.4.0",
-    "gulp-sass": "^4.0.2",
+    "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^2.6.5",
-    "gulp.spritesmith": "^6.11.0"
+    "gulp.spritesmith": "^6.11.0",
+    "sass": "^1.89.2"
   },
   "browserslist": [
     "last 2 version",
