@@ -1,53 +1,52 @@
-var gulp = require('gulp'),
-    rename = require('gulp-rename'),
-    sass = require('gulp-sass'),
-    autoprefixer = require('gulp-autoprefixer'),
-    sourcemaps = require('gulp-sourcemaps'),
-    browserSync = require('browser-sync').create(),
-    spritesmith = require('gulp.spritesmith');
+const gulp = require('gulp');
+const rename = require('gulp-rename');
+const sass = require('gulp-sass')(require('sass')); // Важно: используем Dart Sass
+const autoprefixer = require('gulp-autoprefixer');
+const sourcemaps = require('gulp-sourcemaps');
+const browserSync = require('browser-sync').create();
+const spritesmith = require('gulp.spritesmith');
 
-function style(done){
+function style(done) {
   gulp.src('scss/style.scss')
     .pipe(sourcemaps.init())
-    .pipe(sass({
-      errorLogConsole: true
-    }))
-    .on('error', console.error.bind(console))
+    .pipe(sass().on('error', sass.logError)) // Обработка ошибок корректно
     .pipe(autoprefixer({
       cascade: false
     }))
     .pipe(rename('style.css'))
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./'))
-    .pipe(browserSync.stream())
-  done()
+    .pipe(browserSync.stream());
+  done();
 }
 
-function sync(done){
+function sync(done) {
   browserSync.init({
     server: {
       baseDir: './'
     },
     port: 3000
-  })
+  });
+  done();
 }
 
-function browserReload(done){
-  browserSync.reload()
+function browserReload(done) {
+  browserSync.reload();
+  done();
 }
 
-function watch(){
-  gulp.watch('./scss/**/*', style)
-  gulp.watch('./*.html', browserReload)
+function watch() {
+  gulp.watch('./scss/**/*', style);
+  gulp.watch('./*.html', browserReload);
 }
 
-gulp.task('sprite', function(){
-  var spriteData = gulp.src('img/icon/*.png').pipe(spritesmith({
+gulp.task('sprite', function () {
+  const spriteData = gulp.src('img/icon/*.png').pipe(spritesmith({
     imgName: 'sprite.png',
     cssName: 'sprite.scss',
     padding: 40
   }));
-  return spriteData.pipe(gulp.dest('img/sprites/'))
-})
+  return spriteData.pipe(gulp.dest('img/sprites/'));
+});
 
-gulp.task('default', gulp.parallel(watch, sync))
+gulp.task('default', gulp.parallel(watch, sync));
